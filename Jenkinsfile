@@ -22,7 +22,7 @@ pipeline {
     }
     stage('Finalise') {
       steps {
-        timestamps()
+        echo 'Done'
       }
     }
   }
