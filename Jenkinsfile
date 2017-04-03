@@ -36,8 +36,8 @@ pipeline {
             echo 'just do it'
             
           },
-          "": {
-            junit(testResults: '/target/surefire/*', allowEmptyResults: true)
+          "junit": {
+            junit(testResults: '/target/surefire-reports/*', allowEmptyResults: true)
             
           }
         )
