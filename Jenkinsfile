@@ -13,7 +13,7 @@ pipeline {
             
           },
           "mvnbuild": {
-            sh 'sh mvn build'
+            sh 'sh mvn package'
             
           }
         )
