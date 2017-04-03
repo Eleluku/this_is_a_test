@@ -27,7 +27,7 @@ pipeline {
     }
     stage('additional') {
       steps {
-        echo 'Und noch was'
+        echo 'just do it'
       }
     }
   }
