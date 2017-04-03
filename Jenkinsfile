@@ -31,7 +31,16 @@ pipeline {
     }
     stage('additional') {
       steps {
-        echo 'just do it'
+        parallel(
+          "additional": {
+            echo 'just do it'
+            
+          },
+          "": {
+            junit(testResults: '/target/surefire/*', allowEmptyResults: true)
+            
+          }
+        )
       }
     }
   }
