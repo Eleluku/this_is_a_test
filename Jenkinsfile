@@ -25,5 +25,10 @@ pipeline {
         echo 'Done'
       }
     }
+    stage('additional') {
+      steps {
+        echo 'just do it'
+      }
+    }
   }
 }
