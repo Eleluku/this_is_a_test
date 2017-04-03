@@ -37,7 +37,7 @@ pipeline {
             
           },
           "junit": {
-            junit(testResults: '/target/surefire-reports/*', allowEmptyResults: true)
+            junit(testResults: 'GitTest/target/surefire-reports/*', allowEmptyResults: true)
             
           }
         )
