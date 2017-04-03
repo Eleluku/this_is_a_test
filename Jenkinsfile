@@ -11,6 +11,10 @@ pipeline {
           "And do other Stuff": {
             echo 'Paralell Building'
             
+          },
+          "mvnbuild": {
+            build 'mvn'
+            
           }
         )
       }
