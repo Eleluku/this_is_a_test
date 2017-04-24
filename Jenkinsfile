@@ -5,9 +5,9 @@ pipeline {
       steps {
         sshagent (credentials: ['eberf2']) {
           sh 'ssh -o StrictHostKeyChecking=no -l eberf 192.168.20.128 echo "Hello World"'
-          sh 'uname -a'
+          sh 'ifconfig'
           sh 'exit'
-          sh 'uname -a'
+          sh 'ifconfig'
         }
       }
     }
