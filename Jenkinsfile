@@ -4,7 +4,7 @@ pipeline {
     stage('Build') {
       steps {
         sshagent (credentials: ['eberf']) {
-          sh 'ssh echo "Hello World"'
+          sh 'ssh 192.168.20.130 echo "Hello World"'
         }
       }
     }
