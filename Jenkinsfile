@@ -3,12 +3,9 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh 'mvn package'
-      }
-    }
-    stage('Publish Tests') {
-      steps {
-        junit(testResults: '**/target/surefire-reports/*.xml', allowEmptyResults: true)
+        sshagent (credentials: ['eberf]) {
+          sh 'ssh echo "Hello World"'
+        }
       }
     }
   }
