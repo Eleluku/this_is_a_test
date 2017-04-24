@@ -16,9 +16,13 @@ pipeline {
     stage('Param') {
       steps {
         echo "flag: ${params.userFlag}"
-        when { branch 'master'}
-        echo "on Master"
       }
+    }
+    stage('Conditional') {
+        when { branch 'master'}
+        steps {
+            echo "on Master"
+        }
     }
   }
 }
