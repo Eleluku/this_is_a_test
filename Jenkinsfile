@@ -2,7 +2,7 @@ pipeline {
   agent any
   
   parameters {
-    booleanParam(defaultValue: true, description: 'test', name: 'userFlag')
+    choice(choices: 'Eins\nZwei\nDrei', description: 'test', name: 'userFlag')
   }
   stages {
     stage('Build') {
