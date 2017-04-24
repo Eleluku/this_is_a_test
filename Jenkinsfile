@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sshagent (credentials: ['eberf]) {
+        sshagent (credentials: ['eberf']) {
           sh 'ssh echo "Hello World"'
         }
       }
