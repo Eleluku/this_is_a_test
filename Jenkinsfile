@@ -1,5 +1,9 @@
 pipeline {
   agent any
+  
+  parameters {
+    booleanParam(defaultValue: true, description: 'test', name: 'userFlag')
+  }
   stages {
     stage('Build') {
       steps {
@@ -8,6 +12,9 @@ pipeline {
           sh 'scp /home/eberf/myfile.txt eberf@192.168.20.128:/home/eberf'
         }
       }
+    }
+    stage('Param') {
+        echo "flag: ${params.userFlag}"
     }
   }
 }
