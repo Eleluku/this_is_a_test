@@ -14,7 +14,9 @@ pipeline {
       }
     }
     stage('Param') {
+      steps {
         echo "flag: ${params.userFlag}"
+      }
     }
   }
 }
