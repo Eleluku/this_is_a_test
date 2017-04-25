@@ -1,9 +1,6 @@
 pipeline {
   agent any
   
-  parameters {
-    choice(choices: 'Eins\nZwei\nDrei', description: 'test', name: 'userFlag')
-  }
   stages {
     stage('Build') {
       steps {
@@ -11,11 +8,14 @@ pipeline {
           sh 'ssh -o StrictHostKeyChecking=no -l eberf 192.168.20.128 ifconfig'
           sh 'scp /home/eberf/Documents/myfile.txt eberf@192.168.20.128:/home/eberf'
         }
+        script {
+            load "/home/eberf/params.groovy"
+        }
       }
     }
     stage('Param') {
       steps {
-        echo "flag: ${params.userFlag}"
+        echo "flo: ${env.FLO}"
       }
     }
     stage('Conditional') {
